@@ -6,11 +6,11 @@ export class UserRepository {
     return await prisma.user.findMany();
   }
 
-  async findById(id: string) {
+  async findById(id: number) {
     return await prisma.user.findUnique({ where: { id } });
   }
 
-  async create(name: string, email: string, password: string) {
-    return await prisma.user.create({ data: { name, email, password } });
+  async create(name: string, email: string) {
+    return await prisma.user.create({ data: { name, email } });
   }
 }                                                                   
